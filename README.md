@@ -2,6 +2,24 @@
 
 This repository contains scripts for analyzing and managing subscription data for the Service Optimization Revenue Dashboard.
 
+## identify_multi_entry_accounts.py
+
+This script analyzes Closed Won Opportunities data to identify accounts that have:
+1. Multiple "Add Products" entries for the same product code (350-0100)
+2. No "Reduction" or "Debook" entries after their latest "Add Products" entry
+3. An "Active" account status
+
+### Usage
+```
+python identify_multi_entry_accounts.py
+```
+
+The script generates a CSV report listing all accounts that meet these criteria, including:
+- Account names
+- Dates of all "Add Products" entries
+- Number of "Add Products" entries
+- Latest "Add Products" date
+
 ## Quick_Assist_Ledger_V2.py
 
 This script processes closed won opportunities data and categorizes subscriptions based on their current status. It handles various edge cases including:
